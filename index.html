@@ -1,18 +1,385 @@
-<h1> Hello Dosto </h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josh Batch 10 • Welcome</title>
 
-<h2> Aapka swaagat hai Josh Batch 10 me </h2>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-BOOOM!
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#0f1625cc;
+      --stroke:#1f2a40;
+      --text:#e7eefc;
+      --muted:#a9b4cc;
+      --brand:#ff7a18;   /* orange zest */
+      --brand2:#ffb703;  /* warm highlight */
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 20px;
+    }
 
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 12% 10%, rgba(255,122,24,.25), transparent 55%),
+        radial-gradient(700px 420px at 85% 12%, rgba(255,183,3,.18), transparent 55%),
+        radial-gradient(800px 520px at 60% 90%, rgba(68,108,255,.12), transparent 60%),
+        linear-gradient(180deg, #070b12, var(--bg));
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
 
-this is a feature
+    .wrap{
+      width:min(980px, 100%);
+      display:grid;
+      gap:18px;
+    }
 
-good feature
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
 
-I have fixed this
-adding coolest feature
-adding cool feature
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      letter-spacing:.2px;
+      font-size:14px;
+    }
 
-this is a excellent feature by ME
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 6px rgba(255,122,24,.12);
+    }
 
-this is my change from dev
+    .pill{
+      padding:8px 12px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .hero{
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 260px at 20% 20%, rgba(255,122,24,.22), transparent 60%),
+                  radial-gradient(520px 240px at 85% 30%, rgba(255,183,3,.16), transparent 60%);
+      pointer-events:none;
+      filter: blur(2px);
+    }
+
+    .hero-inner{
+      position:relative;
+      padding:34px 28px;
+      display:grid;
+      gap:14px;
+    }
+
+    h1{
+      margin:0;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+
+    h1 .accent{
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    h2{
+      margin:0;
+      font-weight:600;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.5;
+      max-width:70ch;
+    }
+
+    .boom{
+      margin-top:10px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .boom .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,122,24,.35);
+      background:rgba(255,122,24,.10);
+      color:#ffd4b6;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+
+    .boom .spark{
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:38px}
+    }
+
+    .card{
+      border:1px solid var(--stroke);
+      background:rgba(15,22,37,.72);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      color:#dbe6ff;
+      letter-spacing:.2px;
+    }
+
+    .list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px 12px;
+      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.03);
+      border-radius:14px;
+    }
+
+    .tick{
+      width:22px;height:22px;border-radius:8px;
+      background:linear-gradient(135deg, rgba(255,122,24,.95), rgba(255,183,3,.95));
+      display:grid;place-items:center;
+      color:#1a120a;
+      font-weight:900;
+      flex:0 0 auto;
+      box-shadow: 0 10px 22px rgba(255,122,24,.18);
+    }
+
+    .item b{display:block}
+    .item span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    .dev{
+      border:1px dashed rgba(255,122,24,.45);
+      background:rgba(255,122,24,.08);
+      border-radius:16px;
+      padding:16px;
+      color:#ffd4b6;
+      display:grid;
+      gap:6px;
+    }
+
+    .dev small{
+      color:rgba(231,238,252,.65);
+      letter-spacing:.2px;
+    }
+
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+
+    .btn{
+      appearance:none;
+      border:0;
+      cursor:pointer;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:700;
+      letter-spacing:.2px;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px); opacity:.9}
+
+    .btn-primary{
+      background:linear-gradient(90deg, var(--brand), var(--brand2));
+      color:#1a120a;
+      box-shadow: 0 14px 34px rgba(255,122,24,.22);
+    }
+
+    .btn-ghost{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--text);
+    }
+
+    footer{
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+      padding:6px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>TrainWithShubham • Josh Batch 10</span>
+      </div>
+      <div class="pill">Dark + Orange Zest ✨</div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Hello <span class="accent">Dosto</span> 👋</h1>
+        <h2>
+          Aapka swaagat hai <b>Josh Batch 10</b> me — yaha learning sirf concepts nahi,
+          <b>real production mindset</b> build hota hai.
+        </h2>
+
+        <div class="boom">
+          <span class="tag">BOOOM! 🚀</span>
+          <span class="spark">Let’s ship features like a pro.</span>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary">Start Today’s Lesson</button>
+          <button class="btn btn-ghost">View Roadmap</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>✅ What’s new in this page</h3>
+        <ul class="list">
+          <li class="item">
+            <div class="tick">✓</div>
+            <div>
+              <b>This is a feature</b>
+              <span>Basic feature, but solid foundation.</span>
+            </div>
+          </li>
+
+          <li class="item">
+            <div class="tick">✓</div>
+            <div>
+              <b>Good feature</b>
+              <span>Better UX, clean flow.</span>
+            </div>
+          </li>
+
+          <li class="item">
+            <div class="tick">✓</div>
+            <div>
+              <b>I have fixed this</b>
+              <span>Bug fix + reliability upgrade.</span>
+            </div>
+          </li>
+
+          <li class="item">
+            <div class="tick">✓</div>
+            <div>
+              <b>Adding coolest feature</b>
+              <span>High impact, high confidence.</span>
+            </div>
+          </li>
+
+          <li class="item">
+            <div class="tick">✓</div>
+            <div>
+              <b>Adding cool feature</b>
+              <span>Small improvement, big polish.</span>
+            </div>
+          </li>
+
+          <li class="item">
+            <div class="tick">✓</div>
+            <div>
+              <b>Excellent feature by me</b>
+              <span>Ownership + craftsmanship.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="card">
+        <h3>🧩 Dev Update</h3>
+        <div class="dev">
+          <small>Latest change</small>
+          <div><b>This is my change from dev</b></div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <h3>✨ Next upgrade ideas</h3>
+        <ul class="list">
+          <li class="item">
+            <div class="tick">+</div>
+            <div>
+              <b>Add “What you’ll learn” section</b>
+              <span>3 bullets: outcome driven.</span>
+            </div>
+          </li>
+          <li class="item">
+            <div class="tick">+</div>
+            <div>
+              <b>Add a countdown / schedule</b>
+              <span>Class timing + link.</span>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <footer>
+      Built with ❤️ • Dark theme • Orange zest • Josh Batch 10
+    </footer>
+  </main>
+</body>
+</html>
+
